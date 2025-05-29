@@ -1,22 +1,31 @@
 import React from 'react';
-import { Field } from 'formik';
+import { useField } from 'formik';
 
-const FieldFileInput = ({ classes, ...rest }) => {
+const FieldFileInput = ({ classes, name, ...rest }) => {
   const { fileUploadContainer, labelClass, fileNameClass, fileInput } = classes;
+  const [{value, ...restFields}, helpers] = useField(name);
+
+  const getFileName = () => {
+    if (value) {
+      return value.name;
+    }
+    return '';
+  };
+
+  const onChange = (e) => {
+    const node = document.getElementById('imagePreview');
+    const file = e.target.files[0];
+      helpers.setValue (file);
+      const reader = new FileReader();
+      reader.onload = () => {
+        if (node) node.src = reader.result;
+      };
+      reader.readAsDataURL(file);
+    
+  };
 
   return (
-    <Field name={rest.name}>
-      {props => {
-        const { field } = props;
-
-        const getFileName = () => {
-          if (props.field.value) {
-            return props.field.value.name;
-          }
-          return '';
-        };
-
-        return (
+        
           <div className={fileUploadContainer}>
             <label htmlFor='fileInput' className={labelClass}>
               Choose file
@@ -25,16 +34,14 @@ const FieldFileInput = ({ classes, ...rest }) => {
               {getFileName()}
             </span>
             <input
-              {...field}
+              {...restFields}
               className={fileInput}
               id='fileInput'
               type='file'
+              onChange={onChange}
             />
           </div>
         );
-      }}
-    </Field>
-  );
 };
 
 export default FieldFileInput;
