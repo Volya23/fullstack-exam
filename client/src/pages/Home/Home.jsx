@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Header from '../../components/Header/Header';
@@ -12,18 +12,18 @@ import Spinner from '../../components/Spinner/Spinner';
 const Home = props => {
   const [index, setIndex] = useState(0);
   const [styleName, setStyle] = useState(styles.headline__static);
-  let timeout;
+  const timeout = useRef(null);
 
   useEffect(() => {
-    timeout = setInterval(() => {
-      setIndex(index + 1);
+    timeout.current = setInterval(() => {
+      setIndex(prev => prev + 1);
       setStyle(styles.headline__isloading);
     }, 3000);
     return () => {
       setStyle(styles.headline__static);
-      clearInterval(timeout);
+      clearInterval(timeout.current);
     };
-  });
+  }, []);
 
   const { isFetching } = props;
   const text =
@@ -268,6 +268,7 @@ const Home = props => {
 const mapStateToProps = state => {
   const { isFetching } = state.userStore;
   return { isFetching };
+  
 };
 
 export default connect(mapStateToProps, null)(Home);

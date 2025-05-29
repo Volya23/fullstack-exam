@@ -24,6 +24,8 @@ const SliderBar = props => {
         return style.exampleCarousel;
       case carouselConstants.FEEDBACK_SLIDER:
         return style.feedbackCarousel;
+      default: console.warn('');
+        return '';
     }
   };
 
@@ -57,6 +59,8 @@ const SliderBar = props => {
           </div>
         ));
       }
+      default: console.warn('');
+      return null;
     }
   };
   return (

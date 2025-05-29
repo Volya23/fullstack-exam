@@ -1,4 +1,4 @@
-const express = require('express');
+const Router = require('express');
 const basicMiddlewares = require('../middlewares/basicMiddlewares');
 const hashPass = require('../middlewares/hashPassMiddle');
 const userController = require('../controllers/userController');
@@ -7,7 +7,7 @@ const checkToken = require('../middlewares/checkToken');
 const validators = require('../middlewares/validators');
 const chatController = require('../controllers/chatController');
 const upload = require('../utils/fileUpload');
-const router = express.Router();
+const router = Router();
 
 router.post(
   '/registration',
@@ -72,7 +72,7 @@ router.get(
 router.post(
   '/updateContest',
   checkToken.checkToken,
-  upload.updateContestFile,
+  upload.uploadContestFile,
   contestController.updateContest,
 );
 

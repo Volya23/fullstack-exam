@@ -39,7 +39,7 @@ class Dialog extends React.Component {
     const messagesArray = [];
     const { messages, userId } = this.props;
     let currentTime = moment();
-    messages.forEach((message, i) => {
+    messages.forEach((message) => {
       if (!currentTime.isSame(message.createdAt, 'date')) {
         messagesArray.push(
           <div key={message.createdAt} className={styles.date}>
@@ -50,7 +50,7 @@ class Dialog extends React.Component {
       }
       messagesArray.push(
         <div
-          key={i}
+          key={message.id}
           className={className(
             userId === message.sender ? styles.ownMessage : styles.message
           )}
@@ -59,11 +59,12 @@ class Dialog extends React.Component {
           <span className={styles.messageTime}>
             {moment(message.createdAt).format('HH:mm')}
           </span>
-          <div ref={this.messagesEnd} />
         </div>
       );
     });
-    return <div className={styles.messageList}>{messagesArray}</div>;
+    return <div className={styles.messageList}>{messagesArray}
+    <div ref={this.messagesEnd} />
+    </div>;
   };
 
   blockMessage = () => {
@@ -85,7 +86,6 @@ class Dialog extends React.Component {
       <>
         <ChatHeader userId={userId} />
         {this.renderMainDialog()}
-        <div ref={this.messagesEnd} />
         {chatData && chatData.blackList.includes(true) ? (
           this.blockMessage()
         ) : (
