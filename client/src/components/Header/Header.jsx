@@ -116,7 +116,7 @@ class Header extends React.Component {
           </div>
         </div>
         <div className={styles.navContainer}>
-          <img
+        <img
             src={`${CONSTANTS.STATIC_IMAGES_PATH}blue-logo.png`}
             className={styles.logo}
             alt="blue_logo"
@@ -261,12 +261,9 @@ class Header extends React.Component {
               </ul>
             </div>
             {this.props.data && this.props.data.role !== CONSTANTS.CREATOR && (
-              <div
-                className={styles.startContestBtn}
-                onClick={this.startContests}
-              >
+              <button className={styles.startContestBtn} onClick={this.startContests}>
                 START CONTEST
-              </div>
+              </button>
             )}
           </div>
         </div>

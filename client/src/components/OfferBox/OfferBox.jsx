@@ -202,12 +202,12 @@ const OfferBox = (props) => {
       </div>
       {props.needButtons(data.status) && (
         <div className={styles.btnsContainer}>
-          <div onClick={resolveOffer} className={styles.resolveBtn}>
+          <button onClick={resolveOffer} className={styles.resolveBtn}>
             Resolve
-          </div>
-          <div onClick={rejectOffer} className={styles.rejectBtn}>
+          </button>
+          <button onClick={rejectOffer} className={styles.rejectBtn}>
             Reject
-          </div>
+          </button>
         </div>
       )}
     </div>

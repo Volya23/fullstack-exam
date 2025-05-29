@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 import styles from './BackButton.module.sass';
 
 const BackButton = props => {
@@ -8,10 +7,10 @@ const BackButton = props => {
   }
 
   return (
-    <div onClick={clickHandler} className={styles.buttonContainer}>
-      <span>Back</span>
-    </div>
+    <button onClick={clickHandler} className={styles.buttonContainer}>
+      Back
+    </button>
   );
 };
 
-export default withRouter(BackButton);
+export default (BackButton);
