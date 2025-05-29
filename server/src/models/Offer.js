@@ -1,52 +1,52 @@
-
+const { Model } = require ('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  const Offer = sequelize.define('Offers', {
-    id: {
-      allowNull: false,
-      autoIncrement: true,
-      primaryKey: true,
-      type: DataTypes.INTEGER,
+  class Offer extends Model {
+    static associate ({ User, Contest, Rating }) {
+      Offer.belongsTo(User, { foreignKey: 'userId', sourceKey: 'id' });
+      Offer.belongsTo(Contest, { foreignKey: 'contestId', targetKey: 'id' });
+      Offer.hasOne(Rating, { foreignKey: 'offerId', targetKey: 'id' });};
+  }
+  Offer.init (
+    {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.INTEGER,
+      },
+      userId: {
+        allowNull: false,
+        type: DataTypes.INTEGER,
+      },
+      contestId: {
+        allowNull: false,
+        type: DataTypes.INTEGER,
+      },
+      text: {
+        allowNull: true,
+        type: DataTypes.STRING,
+      },
+      fileName: {
+        allowNull: true,
+        type: DataTypes.STRING,
+      },
+      originalFileName: {
+        allowNull: true,
+        type: DataTypes.STRING,
+      },
+      status: {
+        allowNull: true,
+        type: DataTypes.STRING,
+        defaultValue: 'pending',
+      },
     },
-    userId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-
-    },
-    contestId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    text: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    fileName: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    originalFileName: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    status: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      defaultValue: 'pending',
-    },
-  },
-  {
-    timestamps: false,
-  });
-
-  Offer.associate = function (models) {
-    Offer.belongsTo(models.User, { foreignKey: 'user_id', sourceKey: 'id' });
-  };
-
-  Offer.associate = function (models) {
-    Offer.belongsTo(models.Contest,
-      { foreignKey: 'contest_id', sourceKey: 'id' });
-  };
+    {
+      sequelize,
+      modelName: 'Offer',
+      timestamps: false
+    }
+  );
 
   return Offer;
 };
