@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import DialogListContainer from '../../DialogComponents/DialogListContainer/DialogListContainer';
 import styles from './Chat.module.sass';
@@ -42,9 +43,9 @@ class Chat extends React.Component {
       <div>
         {isShowChatsInCatalog && <CatalogListHeader />}
         {!isShowChatsInCatalog && (
-          <div className={styles.chatHeader}>
+          <Link to="/" className={styles.chatHeader}>
             <img src={`${CONSTANTS.STATIC_IMAGES_PATH}logo.png`} alt="logo" />
-          </div>
+          </Link>
         )}
         {!isShowChatsInCatalog && (
           <div className={styles.buttonsContainer}>
