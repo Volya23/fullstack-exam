@@ -1,0 +1,134 @@
+.bottom
+  text-align: left
+  background: linear-gradient(0deg, rgb(0 0 0 / .02), rgb(0 0 0 / .02)), #fff
+
+  .container
+    border-top: 1px solid #ddd
+    padding-top: 55px
+    padding-bottom: 55px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding-left: 0
+    padding-right: 0
+    @media (min-width: 576px) 
+    max-width: 540px
+  
+    @media (min-width: 768px)
+      max-width: 720px
+    
+    @media (min-width: 992px)
+      max-width: 960px
+    
+    @media (min-width: 1200px)
+      max-width: 1140px
+    
+    @media (min-width: 1400px)
+      max-width: 1190px
+  
+    width: 100%
+    margin-right: auto
+    margin-left: auto
+
+    .rightBlock
+      font-size: 14px
+      color: #2b2e36
+      display: flex
+      align-items: center
+      justify-content: center
+
+      .dot
+        width: 3px
+        height: 3px
+        background: #858a99
+        border-radius: 50%
+        margin: 0 15px
+
+      a
+        display: inline-block
+        font-size: 14px
+        font-weight: 400
+        color: #2b2e36
+
+    .rating
+      display: flex
+      justify-content: center
+      align-items: center
+
+      .trust
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+        width: 175px
+        border-right: 1px solid rgb(0 0 0 / 0.08)
+        justify-content: center
+
+        strong
+          display: block
+          font-size: 18px
+          color: #000
+          font-weight: 700
+          text-align: center
+
+        .stars
+          display: flex
+          justify-content: center
+
+          div
+            width: 20px
+            height: 20px
+            background-repeat: no-repeat
+            background-position: center center
+            background-size: cover
+            margin: 0 1px
+            flex-shrink: 0
+
+        .name 
+          display: flex
+          font-size: 12px
+          font-weight: 600
+          align-items: center
+          margin: 1px 0 0 0
+          width: 100%
+          color: #858a99
+          justify-content: center
+
+          .icon
+            position: relative
+            flex-shrink: 0
+            top: -1px
+            background-repeat: no-repeat
+            background-position: center center
+            background-size: cover
+            margin: 0 2px 0 0
+            width: 12px
+            height: 12px
+
+      .ratings
+        display: block
+        align-items: center
+        font-size: 12px
+        color: #858a99
+        padding-left: 25px
+
+        strong
+          display: inline-block
+          width: 100%
+          font-size: 18px
+          color: #000
+          font-weight: 700
+
+        p
+          margin: 0
+
+    .social
+      a
+        display: inline-block
+        width: 24px
+        height: 24px
+        margin: 0 5px 0 5px
+        background-repeat: no-repeat
+        background-position: center center
+        transition: all ease 0.3s
+        vertical-align: middle
+

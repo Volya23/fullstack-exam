@@ -1,0 +1,170 @@
+.container
+  width: 100%
+  padding-right: var(--bs-gutter-x, 0.75rem)
+  padding-left: var(--bs-gutter-x, 0.75rem)
+  margin-right: auto
+  margin-left: auto
+  
+  @media (min-width: 576px) 
+    max-width: 540px
+  @media (min-width: 768px)
+      max-width: 720px
+  @media (min-width: 992px)
+      max-width: 960px
+  @media (min-width: 1200px)
+      max-width: 1140px
+  @media (min-width: 1400px)
+      max-width: 1190px
+
+.collectionWrap
+  position: relative
+  z-index: 2
+
+.partFour
+  z-index: 3
+  position: relative
+  
+  &.blockSecond
+    padding: 80px 0
+    position: relative
+
+    .caption
+      margin: 0 0 40px 0
+      text-align: center
+
+      h3
+        display: inline-block
+        width: 100%
+        margin-bottom: 35px
+
+.faqTab
+  max-width: 850px
+  margin: 0px auto
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  overflow: hidden
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.04)), #FFFFFF
+  border-radius: 16px
+  margin: -30px auto 0px auto
+
+  span
+    width: 25%
+    text-align: center
+    border-radius: 16px
+    font-size: 16px
+    font-weight: 400
+    padding: 13px 0px
+    cursor: pointer
+
+    &.active
+      background: linear-gradient(45deg, #ff6955 0, #e97543 100%)
+      color: #fff
+
+.activeBlock
+  padding-top: 50px
+
+  .faqHead
+    max-width: 830px
+    margin: 0px auto 30px auto
+    color: #377dff
+    font-size: 1.75rem
+
+.faqBlock
+  overflow: hidden
+  margin: 0
+  padding: 100px 0 100px 0
+  position: relative
+
+  .container
+    position: relative
+    z-index: 2
+
+  .faqInner
+    max-width: 830px
+    margin: 0 auto
+
+  .faqTitle
+    display: none !important
+    text-align: center
+    margin: 0 0 40px 0
+  
+    span
+      font-size: 32px
+      font-weight: 700
+
+  .faqItem
+    border: 1px solid #f3f5fe
+    border-radius: 16px
+    transition: all ease 0.5s
+    margin: 0 0 16px 0
+
+    .faqCaption
+      font-size: 20px
+      font-weight: 700
+      color: #19184a
+      padding: 24px 70px 24px 24px
+      position: relative
+      cursor: pointer
+      transition: all ease 0.5s
+      border-radius: 16px
+
+    .faqContent
+      display: none
+      padding: 0 24px 30px 24px
+
+      p
+        margin: 0
+        font-size: 16px
+        color: #fff
+        padding-top: 20px
+        font-weight: 700
+
+      ul
+        color: #525177
+        list-style: disc inside
+
+        li
+          span
+            font-size: 11px
+            font-weight: bolder
+
+      a
+        color: #fff
+        text-decoration: underline !important
+    
+  
+.faqPart
+  .faqBlock
+    padding: 0
+
+    .faqItem
+      .faqCaption
+        span
+          width: 25px
+          height: 25px
+          content: ""
+          display: block
+          background-repeat: no-repeat
+          position: absolute
+          top: 50%
+          right: 30px
+          margin: -12px 0 0 0
+          background-position: center center
+
+      &:hover
+        border: 1px solid #307DF6
+
+        .faqCaption
+          background-color: rgba(48, 125, 246, 0.1)
+
+.faqItem
+  &.activeShow
+    background-color: #307DF6
+    border: 1px solid transparent
+    color: #fff
+
+    .faqCaption
+      color: #fff
+
+
