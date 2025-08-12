@@ -153,6 +153,33 @@ const PageWorks = () => {
           </div>
         </section>
         <FaqSection />
+        <section className={styles.searchBlock}>
+          <div className={styles.container}>
+            <div className={styles.searchForm}>
+              <div className={styles.icon}
+                   style= {{backgroundImage: `url(${CONSTANTS.STATIC_IMAGES_PATH}NavContests/search.svg)`}}>
+              </div>
+              <input
+                name="search_field"
+                type="text"
+                placeholder="Search Over 300,000+ Premium Names"
+                className={styles.searchInput}/>
+              <button>
+                <span style= {{backgroundImage: `url(${CONSTANTS.STATIC_IMAGES_PATH}NavContests/search1.svg)`}}></span>
+              </button>
+            </div>
+            <div className={styles.listTags}>
+              <span>Popular searches</span>
+              <Link to="https://www.atom.com/premium-domains-for-sale/for/technology">Tech</Link>
+              <Link to="https://www.atom.com/premium-domains-for-sale/for/fashion-clothing">Clothing</Link>
+              <Link to="https://www.atom.com/premium-domains-for-sale/for/finance">Finance</Link>
+              <Link to="https://www.atom.com/premium-domains-for-sale/for/real-estate">Real Estate</Link>
+              <Link to="https://www.atom.com/premium-domains-for-sale/for/cryptocurrency-blockchain">Crypto</Link>
+              <Link to="https://www.atom.com/premium-domains-for-sale/length/Short">Short</Link>
+              <Link to="https://www.atom.com/premium-domains-for-sale/type_of_name/One%20Word">One Word</Link>
+            </div>
+          </div>
+        </section>
         <Footer />
         <EndBlock />
         </>
