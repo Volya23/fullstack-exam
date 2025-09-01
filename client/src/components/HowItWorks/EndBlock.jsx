@@ -32,13 +32,13 @@ export const EndBlock = () => {
             </div>
           </div>
           <div className={styles.ratings} itemScope itemType="http://schema.org/AggregateRating">
-            <strong itemprop="ratingValue">
+            <strong itemProp="ratingValue">
               4.5/
-              <span itemprop="bestRating">5</span>
+              <span itemProp="bestRating">5</span>
             </strong>
             <p>
               based on
-              <span itemprop="ratingCount">716 ratings</span>
+              <span itemProp="ratingCount">716 ratings</span>
             </p>
           </div>
         </Link>
