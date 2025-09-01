@@ -1,13 +1,17 @@
 .footerTop
-  padding: 40px 0 40px 0
+  padding: 40px 0
   background: linear-gradient(0deg, rgb(247 245 243 / .4), rgb(247 245 243 / .4)), #fff
 
   .container
     display: flex
     flex-wrap: wrap
     padding:0
+
+    @media only screen and (max-width: 767px)
+      padding: 0 15px
+
     @media (min-width: 576px) 
-    max-width: 540px
+      max-width: 540px
   
     @media (min-width: 768px)
       max-width: 720px
@@ -31,6 +35,13 @@
       flex: 0 0 auto
       width: 25%
 
+      @media only screen and (max-width: 767px)
+        width: 100%
+        padding: 20px 0 0 0
+
+      @media screen and (max-width: 991px)
+        padding: 20px 0 0 0
+
       h3
         font-size: 18px
         font-weight: 700
@@ -38,17 +49,37 @@
         position: relative
         line-height: 1.3
         color: #222
+
+        span
+          @media only screen and (max-width: 991px)
+            content: ""
+            width: 25px
+            height: 25px
+            background-repeat: no-repeat
+            display: none
+            position: absolute
+            top: 50%
+            right: 0
+            background-position: center center
+            margin: -13px 0 0 0
+            display: block
+            cursor: pointer
       
       .indent
         margin: 20px 0
         padding-top: 40px
 
+        @media only screen and (max-width: 991px)
+          margin-top: 40px
+          padding-top: 0
+
       .menu
         list-style: none
         margin: 0
         padding: 0
-        @media (min-width: 992px)
-          display: block !important
+
+        @media only screen and (max-width: 991px)
+          display: none
           
         a
           font-size: 14px
@@ -56,3 +87,5 @@
           color: #222
           transition: all ease .3s
           margin: 0 0 10px 0
+
+          

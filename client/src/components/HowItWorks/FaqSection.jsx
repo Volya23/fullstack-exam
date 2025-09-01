@@ -5,13 +5,13 @@ import { Link } from "react-router-dom";
 
 export const FaqSection = () => {
     const [isActive, setIsActive] = useState(0);
-    const [isClick, setIsClick] = useState ([]);
+    const [isClick, setIsClick] = useState ({ Launching:[], Buying: [], Contests: [], Creatives: [] });
     
       const tabs = [
         {name: "Launching A Contest", id: "Launching"},
         {name: "Buying From Marketplace", id: "Buying"},
         {name: "Managed Contests", id: "Contests"},
-        {name: "For Creatives", id: "For Creatives"}
+        {name: "For Creatives", id: "Creatives"}
       ];
     
       const faqs =[
@@ -137,11 +137,13 @@ export const FaqSection = () => {
         }
       ];
 
-      const switchFaq = (ind) => {
-        setIsClick ((prev) =>
-        prev.includes (ind)
-          ? prev.filter((i) => i !== ind)
-          : [...prev, ind]);
+      const switchFaq = (section, i) => {
+        setIsClick((prev) => ({
+          ...prev,
+          [section]: prev[section].includes(i)
+          ? prev[section].filter((el) => el !== i)
+          : [...prev[section], i],
+        }));
       };
     
     return (
@@ -173,22 +175,19 @@ export const FaqSection = () => {
               <section className={styles.faqBlock}>
                 <div className={styles.container}>
                   <div className={styles.faqInner}>
-                    <div className={styles.faqTitle}>
-                      <span>Frequently Asked Questions</span>
-                    </div>
                       {faqs.map((faq, i) => (
                         <div key={i}
-                             className={`${styles.faqItem} ${isClick.includes(i) ? styles.activeShow : ""}`}>
+                             className={`${styles.faqItem} ${isClick.Launching.includes(i) ? styles.activeShow : ""}`}>
                           <div className={styles.faqCaption}
-                               onClick={() => switchFaq (i)}
+                               onClick={() => switchFaq ("Launching", i)}
                                >
                                 <span style= {{backgroundImage: `url(${
-                                  isClick.includes(i)
+                                  isClick.Launching.includes(i)
                                   ? CONSTANTS.STATIC_IMAGES_PATH+"NavContests/icon-close.svg"
                                   : CONSTANTS.STATIC_IMAGES_PATH+"NavContests/icon-plus.svg"})`}}></span>
                             {faq.question}
                           </div>
-                          {isClick.includes(i) && (
+                          {isClick.Launching.includes(i) && (
                             <div className={styles.faqContent}
                                  style= {{color: "rgb(255, 255, 255)", display: "block"}}>
                               <p>{faq.answ}</p>
@@ -207,22 +206,19 @@ export const FaqSection = () => {
               <section className={styles.faqBlock}>
                 <div className={styles.container}>
                   <div className={styles.faqInner}>
-                    <div className={styles.faqTitle}>
-                      <span>Frequently Asked Questions</span>
-                    </div>
                       {faqsSecond.map((faq, i) => (
                         <div key={i}
-                             className={`${styles.faqItem} ${isClick.includes(i) ? styles.activeShow : ""}`}>
+                             className={`${styles.faqItem} ${isClick.Buying.includes(i) ? styles.activeShow : ""}`}>
                           <div className={styles.faqCaption}
-                               onClick={() => switchFaq (i)}
+                               onClick={() => switchFaq ("Buying", i)}
                                >
                                 <span style= {{backgroundImage: `url(${
-                                  isClick.includes(i)
+                                  isClick.Buying.includes(i)
                                   ? CONSTANTS.STATIC_IMAGES_PATH+"NavContests/icon-close.svg"
                                   : CONSTANTS.STATIC_IMAGES_PATH+"NavContests/icon-plus.svg"})`}}></span>
                             {faq.question}
                           </div>
-                          {isClick.includes(i) && (
+                          {isClick.Buying.includes(i) && (
                             <div className={styles.faqContent}
                                  style= {{color: "rgb(255, 255, 255)", display: "block"}}>
                               <p>{faq.answ}</p>
@@ -241,22 +237,19 @@ export const FaqSection = () => {
               <section className={styles.faqBlock}>
                 <div className={styles.container}>
                   <div className={styles.faqInner}>
-                    <div className={styles.faqTitle}>
-                      <span>Frequently Asked Questions</span>
-                    </div>
                       {faqsThird.map((faq, i) => (
                         <div key={i}
-                             className={`${styles.faqItem} ${isClick.includes(i) ? styles.activeShow : ""}`}>
+                             className={`${styles.faqItem} ${isClick.Contests.includes(i) ? styles.activeShow : ""}`}>
                           <div className={styles.faqCaption}
-                               onClick={() => switchFaq (i)}
+                               onClick={() => switchFaq ("Contests", i)}
                                >
                                 <span style= {{backgroundImage: `url(${
-                                  isClick.includes(i)
+                                  isClick.Contests.includes(i)
                                   ? CONSTANTS.STATIC_IMAGES_PATH+"NavContests/icon-close.svg"
                                   : CONSTANTS.STATIC_IMAGES_PATH+"NavContests/icon-plus.svg"})`}}></span>
                             {faq.question}
                           </div>
-                          {isClick.includes(i) && (
+                          {isClick.Contests.includes(i) && (
                             <div className={styles.faqContent}
                                  style= {{color: "rgb(255, 255, 255)", display: "block"}}>
                               <p>{faq.answ}</p>
@@ -275,22 +268,19 @@ export const FaqSection = () => {
               <section className={styles.faqBlock}>
                 <div className={styles.container}>
                   <div className={styles.faqInner}>
-                    <div className={styles.faqTitle}>
-                      <span>Frequently Asked Questions</span>
-                    </div>
                       {faqsFourth.map((faq, i) => (
                         <div key={i}
-                             className={`${styles.faqItem} ${isClick.includes(i) ? styles.activeShow : ""}`}>
+                             className={`${styles.faqItem} ${isClick.Creatives.includes(i) ? styles.activeShow : ""}`}>
                           <div className={styles.faqCaption}
-                               onClick={() => switchFaq (i)}
+                               onClick={() => switchFaq ("Creatives", i)}
                                >
                                 <span style= {{backgroundImage: `url(${
-                                  isClick.includes(i)
+                                  isClick.Creatives.includes(i)
                                   ? CONSTANTS.STATIC_IMAGES_PATH+"NavContests/icon-close.svg"
                                   : CONSTANTS.STATIC_IMAGES_PATH+"NavContests/icon-plus.svg"})`}}></span>
                             {faq.question}
                           </div>
-                          {isClick.includes(i) && (
+                          {isClick.Creatives.includes(i) && (
                             <div className={styles.faqContent}
                                  style= {{color: "rgb(255, 255, 255)", display: "block"}}>
                               <p>{faq.answ}</p>

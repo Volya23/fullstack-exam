@@ -1,18 +1,20 @@
 .bottom
   text-align: left
-  background: linear-gradient(0deg, rgb(0 0 0 / .02), rgb(0 0 0 / .02)), #fff
+  background: linear-gradient(0deg, rgb(0 0 0 / 0.02), rgb(0 0 0 / 0.02)), #fff
 
   .container
     border-top: 1px solid #ddd
-    padding-top: 55px
-    padding-bottom: 55px
+    padding: 55px 0
     display: flex
     align-items: center
     justify-content: space-between
-    padding-left: 0
-    padding-right: 0
+
+    @media screen and (max-width: 991px)
+      flex-wrap: wrap
+      text-align: center
+
     @media (min-width: 576px) 
-    max-width: 540px
+      max-width: 540px
   
     @media (min-width: 768px)
       max-width: 720px
@@ -37,6 +39,10 @@
       align-items: center
       justify-content: center
 
+      @media screen and (max-width: 991px)
+        width: 100%
+        order: 4
+
       .dot
         width: 3px
         height: 3px
@@ -50,10 +56,26 @@
         font-weight: 400
         color: #2b2e36
 
+        @media only screen and (max-width: 767px)
+          display: block !important
+          margin: 25px 0 !important
+
     .rating
       display: flex
       justify-content: center
       align-items: center
+
+      @media screen and (max-width: 767px)
+        width: 100%
+        padding: 0 0 30px 0
+
+      @media screen and (max-width: 991px)
+        width: 100%
+        flex-wrap: wrap
+        padding: 30px 0
+        text-align: center
+        align-items: center
+        justify-content: center
 
       .trust
         display: flex
@@ -63,12 +85,22 @@
         border-right: 1px solid rgb(0 0 0 / 0.08)
         justify-content: center
 
+        @media screen and (max-width: 767px)
+          width: 135px !important
+          padding-right: 25px
+
         strong
           display: block
           font-size: 18px
           color: #000
           font-weight: 700
           text-align: center
+
+          @media screen and (max-width: 767px)
+            width: 100%
+            font-size: 14px
+            margin: 0 0 1px 0
+            text-align: center
 
         .stars
           display: flex
@@ -122,6 +154,9 @@
           margin: 0
 
     .social
+      @media screen and (max-width: 767px)
+        text-align: center
+        width: 100%
       a
         display: inline-block
         width: 24px

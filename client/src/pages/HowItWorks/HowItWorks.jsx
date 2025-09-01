@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Header from "../../components/HowItWorks/Header";
 import FaqSection from "../../components/HowItWorks/FaqSection";
@@ -12,6 +12,8 @@ const PageWorks = () => {
 
     return (
         <>
+        <button className={styles.accessibilityBtn}
+                style={{backgroundImage: `url(${CONSTANTS.STATIC_IMAGES_PATH}NavContests/icon_accessibility.png)`}}></button>
         <Header />
         <section className={`${styles.blockFirst} ${styles.partOne}`}>
             <div className={styles.bInner}>

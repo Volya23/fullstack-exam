@@ -1,3 +1,30 @@
+.accessibilityBtn
+  top: auto
+  bottom: 20px
+  left: 20px
+  right: auto
+  width: 45px
+  height: 45px
+  padding: 0
+  position: fixed
+  outline: 0
+  border: 0
+  border-radius: 50%
+  background-color: #146ff8
+  cursor: pointer
+  z-index: 2147483647
+  transition: all .15s ease
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
+
+  @media screen and (max-width: 991px)
+    width: 30px
+    height: 30px
+
+  &:hover
+    transform: scale(1.1)
+
 .blockFirst
   background: radial-gradient(circle at center, #f2f9ff, #e6f3ff, #e6edfa, #f2f4f8) !important
   
@@ -12,6 +39,9 @@
       background-color: #fbfbff
       background-image: none !important
 
+      @media screen and (max-width: 991px)
+        padding: 0
+
       h1
         color: #19184A
 
@@ -24,14 +54,21 @@
       padding: 20px 0 30px 0
       text-align: center
 
+      @media screen and (max-width: 991px)
+        padding: 10px 0px 20px 0px
+        padding-top: 97px
+
       h1
         font-size: 40px
         max-width: 100%
         font-weight: 700
         margin: 0 auto 10px auto
 
+        @media screen and (max-width: 991px)
+          font-size: 24px
+
       p
-          margin: 0 0 40px 0
+        margin: 0 0 40px 0
 
     .atp
       max-width: 1040px
@@ -41,16 +78,32 @@
       padding-bottom: 0
       justify-content: space-between
 
+      @media screen and (max-width: 991px)
+        flex-wrap: wrap
+        flex-direction: column-reverse
+
       .left
         max-width: 490px
         text-align: left
 
+        @media screen and (max-width: 991px)
+          max-width: 100%
+          width: 100%
+          text-align: center
+
       p
         font-size: 16px
+
+        @media screen and (max-width: 991px)
+          margin: 0 0 20px 0
 
       .right
         text-align: center
         width: 50%
+
+        @media screen and (max-width: 991px)
+          width: 100%
+          padding: 0
 
         .videoBox
           position: relative
@@ -85,6 +138,9 @@
       font-family: "Product Sans", sans-serif
       letter-spacing: 0.6px
 
+      @media only screen and (max-width: 767px)
+        margin-top: 30px
+
 .container
   width: 100%
   padding-right: var(--bs-gutter-x, 0.75rem)
@@ -111,11 +167,14 @@ h1, h2, h3, h4
 
 h3
   @media (min-width: 1200px)
-      font-size: 1.75rem
+    font-size: 1.75rem
 
 .blockSecond
   padding: 80px 0
   position: relative
+
+  @media screen and (max-width: 991px)
+    padding: 60px 0
 
   &.partTwo
     background: linear-gradient(271.19deg, rgba(48, 125, 246, .05) 0%, rgba(20, 187, 191, .05) 100%), #FFFFFF
@@ -124,6 +183,9 @@ h3
       max-width: 640px
       margin-left: auto
       margin-right: auto
+
+      @media screen and (max-width: 991px)
+        margin: 0 0 40px 0
 
     .buttonBrand
       color: #637CF7
@@ -138,6 +200,7 @@ h3
       display: inline-block
       width: 100%
       margin-bottom: 35px
+      color: #19184a
     
     span
       color: #377dff
@@ -172,11 +235,18 @@ h3
     background: #fff
     box-shadow: 0 16px 32px rgb(0 0 0 / 0.04)
     border-radius: 24px
-    margin: 0 0 30px 0
     padding-bottom: 0.25rem !important
     display: flex
     flex-direction: column
     justify-content: space-between
+
+    @media screen and (max-width: 575px)
+      min-height: 230px
+        
+    @media screen and (max-width: 767px)
+      padding: 10px
+      text-align: center
+      margin: 0 0 10px 0
 
     .icon
       margin: 0 0 10px 0
@@ -200,6 +270,9 @@ h3
   margin-top: calc(var(--bs-gutter-y) * -1)
   margin-right: calc(var(--bs-gutter-x) * -0.5)
   margin-left: calc(var(--bs-gutter-x) * -0.5)
+
+  @media screen and (max-width: 767px)
+    --bs-gutter-x: 0.5rem
 
   > *
     flex-shrink: 0
@@ -290,8 +363,7 @@ h3
 
 .blockSecond
   &.partThree
-    background: linear-gradient(271.19deg, rgb(68 51 241 / .04) 0%, rgb(98 142 255 / .04) 100%), #FFFFFF
-    overflow: hidden
+    background: linear-gradient(271.19deg, rgb(68 51 241 / 0.04) 0%, rgb(98 142 255 / 0.04) 100%), #FFFFFF
 
 .cup
   margin-bottom: 20px
@@ -366,8 +438,11 @@ h3
     padding-top: 40px
     padding-bottom: 60px
 
+    @media screen and (max-width: 991px)
+      border: none
+
   .searchForm
-    background: linear-gradient(45deg, rgb(142 97 255 / .5333333333) 0, #339bf7 50%, rgb(43 198 215 / .431372549) 100%)
+    background: linear-gradient(45deg, rgb(142 97 255 / 0.5333333333) 0, #339bf7 50%, rgb(43 198 215 / 0.431372549) 100%)
     border-radius: 30px
     padding: 2px
     margin: 0 auto 30px auto
@@ -390,7 +465,6 @@ h3
       padding: 0 50px 0 48px
       background: #fff
       border-radius: 999px
-      font-size: 24px
       height: 60px
       line-height: 60px
       color: #343434
@@ -411,6 +485,9 @@ h3
       transition: all ease 0.6s
       box-shadow: 3px 3px 10px 0 rgb(255 104 85 / 0.3)
 
+      @media only screen and (max-width: 767px)
+        background: #FF6955 !important
+
       span
         width: 21px
         height: 21px
@@ -423,6 +500,12 @@ h3
   .listTags
     margin: 35px 0 0 0
 
+    @media screen and (max-width: 767px)
+      white-space: inherit
+
+    @media screen and (max-width: 991px)
+      text-align: left
+
     span
       display: inline-block
       margin: 0 12px 12px 0
@@ -432,6 +515,9 @@ h3
       padding: 8px 0
       color: #343434
       display: none
+
+      @media screen and (max-width: 991px)
+        width: 100%
 
     a
       display: inline-block

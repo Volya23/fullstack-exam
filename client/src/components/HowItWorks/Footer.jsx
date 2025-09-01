@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "../../components/HowItWorks/Footer.module.sass";
+import CONSTANTS from "../../constants";
 
 
 export const Footer = () => {
@@ -10,7 +11,11 @@ export const Footer = () => {
     <footer className={styles.footerTop}>
       <div className={styles.container}>
         <div className={styles.columns}>
-            <h3>Services</h3>
+            <h3>Services
+                <span className={styles.arrowBlue}
+                      style= {{backgroundImage: `url(${CONSTANTS.STATIC_IMAGES_PATH}NavContests/menu/icon-arrow-down-blue.svg)`}}>
+                </span>
+            </h3>
             <div className={styles.menu}>
                 <Link to='https://www.atom.com/domains-for-sale' className={styles.linkRows}>Domains for Sale</Link>
                 <Link to='https://www.atom.com/ultra-premium-marketplace/all' className={styles.linkRows}>Ultra Premium Marketplace</Link>
@@ -43,7 +48,11 @@ export const Footer = () => {
             </div>
         </div>
         <div className={styles.columns}>
-            <h3>Tools</h3>
+            <h3>Tools
+                <span className={styles.arrowBlue}
+                      style= {{backgroundImage: `url(${CONSTANTS.STATIC_IMAGES_PATH}NavContests/menu/icon-arrow-down-blue.svg)`}}>
+                </span>
+            </h3>
             <div className={styles.menu}>
                 <Link to='https://www.atom.com/business-name-generator' className={styles.linkRows}>Business Name Generator</Link>
                 <Link to='https://www.atom.com/domain-name-generator' className={styles.linkRows}>Domain Name Generator</Link>
@@ -63,7 +72,11 @@ export const Footer = () => {
             </div>
         </div>
         <div className={styles.columns}>
-            <h3>Sellers</h3>
+            <h3>Sellers
+                <span className={styles.arrowBlue}
+                      style= {{backgroundImage: `url(${CONSTANTS.STATIC_IMAGES_PATH}NavContests/menu/icon-arrow-down-blue.svg)`}}>
+                </span>
+            </h3>
             <div className={styles.menu}>
                 <Link to='https://www.atom.com/sell-domain-names' className={styles.linkRows}>Become a Seller</Link>
                 <Link to='https://helpdesk.atom.com/en/articles/997701-domain-marketplace-terms-conditions-sellers' className={styles.linkRows}>Domain Selling Info</Link>
@@ -73,7 +86,11 @@ export const Footer = () => {
                 <Link to='https://www.atom.com/auctions' className={styles.linkRows}>Domain Auctions</Link>
                 <Link to='https://discussion.atom.com' className={styles.linkRows}>Discussion Forum</Link>
             </div>
-            <h3 className={styles.indent}>Creatives</h3>
+            <h3 className={styles.indent}>Creatives
+                <span className={styles.arrowBlue}
+                      style= {{backgroundImage: `url(${CONSTANTS.STATIC_IMAGES_PATH}NavContests/menu/icon-arrow-down-blue.svg)`}}>
+                </span>
+            </h3>
             <div className={styles.menu}>
                 <Link to='https://www.atom.com/join-as-creative' className={styles.linkRows}>Become a Creative</Link>
                 <Link to='https://helpdesk.atom.com/en/collections/118397-creatives' className={styles.linkRows}>Creative FAQs</Link>
@@ -83,7 +100,11 @@ export const Footer = () => {
             </div>
         </div>
         <div className={styles.columns}>
-            <h3>Atom</h3>
+            <h3>Atom
+                <span className={styles.arrowBlue}
+                      style= {{backgroundImage: `url(${CONSTANTS.STATIC_IMAGES_PATH}NavContests/menu/icon-arrow-down-blue.svg)`}}>
+                </span>
+            </h3>
             <div className={styles.menu}>
                 <Link to='https://www.atom.com/AboutUs' className={styles.linkRows}>About</Link>
                 <Link to='https://www.atom.com/ContactUs' className={styles.linkRows}>Contact</Link>
@@ -97,7 +118,11 @@ export const Footer = () => {
                 <Link to='https://www.atom.com/blog/' className={styles.linkRows}>Blog</Link>
                 <Link to='https://careers.atom.com/atom-com' className={styles.linkRows}>Careers</Link>
             </div>
-            <h3 className={styles.indent}>Legal</h3>
+            <h3 className={styles.indent}>Legal
+                <span className={styles.arrowBlue}
+                      style= {{backgroundImage: `url(${CONSTANTS.STATIC_IMAGES_PATH}NavContests/menu/icon-arrow-down-blue.svg)`}}>
+                </span>
+            </h3>
             <div className={styles.menu}>
                 <Link to='https://www.atom.com/Terms&Conditions' className={styles.linkRows}>Terms of Service</Link>
                 <Link to='https://www.atom.com/privacy-policy' className={styles.linkRows}>Privacy Policy</Link>
