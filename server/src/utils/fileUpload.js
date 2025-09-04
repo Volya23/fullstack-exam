@@ -16,6 +16,15 @@ if (!fs.existsSync(filePath)) {
   });
 }
 
+const filesOption = (req, file, cb) => {
+  const allowedTypes = ['imagrs/jpeg', 'images/png', 'images/gif'];
+
+  if (!allowedTypes.includes (file.mimetype)) {
+    return cb(new ServerError('Support only images (*.png, *.gif, *.jpeg)', 400))
+  }
+  cb(null, true);
+};
+
 const storageContestFiles = multer.diskStorage({
   destination (req, file, cb) {
     cb(null, filePath);
@@ -25,12 +34,9 @@ const storageContestFiles = multer.diskStorage({
   },
 });
 
-const multerInstance = multer ({ storage: storageContestFiles });
+const multerInstance = multer ({ storage: storageContestFiles, filesOption });
 
 module.exports.uploadAvatar = multerInstance.single('file');
-
 module.exports.uploadContestFiles = multerInstance.array('files', 3);
-
 module.exports.uploadContestFile = multerInstance.single('file');
-
 module.exports.uploadLogoFiles = multerInstance.single('offerData');

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { useField } from 'formik';
 
 const ImageUpload = props => {
-  const [{value, ...restFields}, helpers] = useField(props.name);
+  const [{value, ...restFields},meta, helpers] = useField(props.name);
   const { uploadContainer, inputContainer, imgStyle } = props.classes;
   const onChange = e => {
     const node = window.document.getElementById('imagePreview');
@@ -38,6 +38,9 @@ const ImageUpload = props => {
         className={classNames({ [imgStyle]: !!value })}
         alt='user'
       />
+      {meta.touched && meta.error && (
+        <div className="error">{meta.error}</div>
+      )}
     </div>
   );
 };
