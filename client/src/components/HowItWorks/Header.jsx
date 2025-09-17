@@ -422,7 +422,7 @@ export const Header = () => {
                       </Link>
                     </li>
                     <li>
-                      <Link to="javascript:Intercom('show');"
+                      <Link to="#"
                             className={styles.dropdownItem}>
                         <div className={styles.icons1}
                               style={{backgroundImage: `url(${CONSTANTS.STATIC_IMAGES_PATH}NavContests/icon-chat-black.svg)`}}>
@@ -431,7 +431,7 @@ export const Header = () => {
                       </Link>
                     </li>
                     <li>
-                      <Link to="mailto:service@atom.com"
+                      <Link to="#"
                             className={styles.dropdownItem}>
                         <div className={styles.icons1}
                             style= {{backgroundImage: `url(${CONSTANTS.STATIC_IMAGES_PATH}NavContests/icon-email.svg)`}}>
