@@ -23,6 +23,10 @@ class Header extends React.Component {
     this.props.history.push('/startContest');
   };
 
+  startEvents =() => {
+    this.props.history.push('/events')
+  }
+
   renderLoginButtons = () => {
     if (this.props.data) {
       return (
@@ -263,9 +267,14 @@ class Header extends React.Component {
               </ul>
             </div>
             {this.props.data && this.props.data.role !== CONSTANTS.CREATOR && (
-              <button className={styles.startContestBtn} onClick={this.startContests}>
-                START CONTEST
-              </button>
+              <>
+                <button className={styles.startContestBtn} onClick={this.startContests}>
+                  START CONTEST
+                </button>
+                <button className={styles.startContestBtn} onClick={this.startEvents}>
+                  EVENTS
+                </button>
+              </>
             )}
           </div>
         </div>
