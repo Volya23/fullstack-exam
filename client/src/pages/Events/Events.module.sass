@@ -100,12 +100,28 @@
 
         h4
           font-size: 14px
+          margin-right: 10px
           @media (max-width: 480px)
             font-size: 13px
 
         img
           height: 19px
           weight: 19px
+
+        .timerIcon
+          position: relative
+          display: inline-block
+
+          .badge
+            position: absolute
+            top: -8px
+            right: -8px
+            background: red
+            color: white
+            font-size: 12px
+            font-weight: bold
+            border-radius: 50%
+            padding: 4px 6px
 
       .eventsList
         display: flex

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from "yup";
 import moment from "moment";
@@ -12,6 +12,12 @@ function Events () {
   const [events, setEvents] = useState(() => {
     return JSON.parse(localStorage.getItem("events") || "[]");
   });
+
+  const [notifyCount, setNotifyCount] = useState(0);
+
+  const handleInform = useCallback((id, active) => {
+    setNotifyCount(prev => active ? prev + 1 : Math.max(0, prev - 1));
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("events", JSON.stringify(events));
@@ -76,11 +82,16 @@ function Events () {
           <div className={styles.boxHeader}>
             <h2>Live upcoming checks</h2>
             <h4>Remaining time</h4>
-            <img src={`${CONSTANTS.STATIC_IMAGES_PATH}timer_icon.svg`} alt="timer" />
+            <div className={styles.timerIcon}>
+              <img src={`${CONSTANTS.STATIC_IMAGES_PATH}timer_icon.svg`} alt="timer" />
+              {notifyCount > 0 && (
+                <span className={styles.badge}>{notifyCount}</span>
+              )}
+            </div>
           </div>
           <div className={styles.eventsList}>
             {events.map((ev) => (
-                <Timer key={ev.id} event={ev} onDelete={deleteEvent} />
+                <Timer key={ev.id} event={ev} onDelete={deleteEvent} inform={handleInform}/>
             ))}
           </div>
         </div>

@@ -3,27 +3,37 @@ import ProgressBar from "./ProgressBar";
 import styles from "../../pages/Events/Events.module.sass";
 
 
-const Timer = ({ event, onDelete }) => {
+const Timer = ({ event, onDelete, inform }) => {
   const [timeLeft, setTimeLeft] = useState(new Date(event.date) - new Date());
+  const [notify, setNotify] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
       const diff = new Date(event.date) - new Date();
       setTimeLeft(diff > 0 ? diff : 0);
 
-      if (diff > 0 && diff <= event.notifyBefore * 60 * 1000) {
-        console.log(`Event "${event.name}" is coming soon!`);
-      }
-    }, 1000);
+      if ((diff > 0 && diff <= event.notifyBefore * 60 * 1000) || diff <= 0) {
+        setNotify(true);
+        }
+      }, 1000);
        
     return () => clearInterval(interval);
-  }, [event.date]);
+  }, [event.date, event.notifyBefore]);
       
+  useEffect(() => {
+    if (notify) {
+      inform(event.id, true);
+    }
+  }, [notify, inform, event.id]);
+
   if (timeLeft <= 0) {
     return (
       <div className={styles.itemFinish}>
         <span>{event.name}</span>
-        <button className={styles.deleteBtn} onClick={() => onDelete(event.id)}>
+        <button className={styles.deleteBtn} onClick={() => {onDelete(event.id);
+        if (notify) {
+          inform(false);
+        }}}>
         ✕</button>
       </div>
     );
