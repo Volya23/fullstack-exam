@@ -1,0 +1,348 @@
+@mixin mobLinkGeneral
+  display: flex
+  align-items: center
+  gap: 25px
+
+  .linkHead
+    display: flex
+    font-size: 16px
+    color: #222
+    font-weight: 700
+    align-items: center
+    padding: 0 0 5px 0
+    column-gap: 10px
+    white-space: nowrap
+
+    .arrow
+      position: relative
+      top: 1px
+      margin-left: 0
+      right: 0
+      transition: all ease 0.3s
+
+  p
+    color: #757575
+    font-size: 14px
+    margin: 0
+    font-weight: 400
+
+@mixin mobCollectionGeneral
+  white-space: nowrap
+  display: flex
+  flex-direction: column
+
+  h3
+    font-size: 16px
+    font-weight: 700
+    color: #222
+    margin-bottom: 5px
+
+  a
+    display: inline-block
+    margin: 3px 0 3px -8px
+    padding: 4px 8px
+    font-size: 15px
+    color: #656565
+    font-family: "Product Sans", sans-serif
+
+  span
+    background: linear-gradient(89.52deg, #7088ff 0.42%, #3a4991 114.33%)
+    box-shadow: 1px 1px 2px rgb(0 0 0 / 0.15)
+    border-radius: 15px
+    line-height: 22px
+    color: #fff
+    display: inline-block
+    padding: 0 8px
+    margin-left: 5px
+    position: relative
+    top: 0
+    font-size: 13px
+
+.mobileInner
+  .container 
+    position: static !important
+
+  .container
+    width: 100%
+    padding-right: var(--bs-gutter-x, 0.75rem)
+    padding-left: var(--bs-gutter-x, 0.75rem)
+    margin-right: auto
+    margin-left: auto
+
+.mobSearch 
+  max-width: 800px
+  margin: 0 0 16px 0
+  position: relative
+  border-bottom: 1px solid #edeff3
+
+  .mobIcon 
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    width: 40px
+    background-repeat: no-repeat
+    background-position: center left
+    z-index: 1
+
+  .mobInput 
+    border: none
+    outline: 0
+    display: block
+    width: 100%
+    text-align: left
+    padding: 0 40px
+    background: #fff
+    box-shadow: none
+    border-radius: 999px
+    font-size: 18px
+    height: 56px
+    line-height: 56px
+    color: #343434
+    font-weight: 400
+
+    @media screen and (max-width: 767px)
+      height: 60px
+
+    @media screen and (max-width: 575px)
+      padding: 0 50px
+      text-align: left
+      font-size: 14px
+
+    @media screen and (max-width: 991px) 
+      font-size: 16px
+      height: 56px
+      padding: 0 40px
+
+  button
+    background: linear-gradient(450deg, #4a9dff 0, #637cf7 50%, #8e71d1 100%)
+    box-shadow: 0 16px 40px rgb(11 169 166 / 0.16)
+    width: 40px
+    height: 40px
+    padding: 0
+    position: absolute
+    top: 8px
+    right: 0
+    cursor: pointer
+    border: none
+    border-radius: 50%
+
+    @media screen and (max-width: 991px)
+      width: 40px
+      height: 40px
+      
+    @media only screen and (max-width: 767px)
+      background: #FF6955 !important
+
+    span
+      position: absolute
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+      display: block
+      background-repeat: no-repeat
+      background-position: center center
+      background-size: 20px auto
+      z-index: 1
+
+.mobMenu
+  padding: 0
+
+  .generalUl
+    margin: 0 0 20px 0
+    padding: 0
+    list-style: none
+    min-height: calc(100vh - 150px)
+
+    li
+      margin: 0 0 13px 0
+      padding: 0
+
+      .mobTitleMenu
+        padding: 0 15px
+        z-index: 2
+        display: flex
+        align-items: center
+        justify-content: space-between
+        font-size: 16px
+        transition: all ease 0.3s
+        color: #19184a
+        font-weight: 700
+        text-align: center
+
+        &.showArrowBlue
+          color: #637cf7
+
+        .arrowDown
+          width: 20px
+          height: 20px
+          background-repeat: no-repeat
+          background-position: center center
+
+          &.rotate
+              transform: rotate(180deg)
+      a
+        font-size: 14px
+        font-family: "Plus Jakarta Sans", sans-serif
+        color: #19184a
+        font-weight: 400
+
+        &:hover
+          color: #637cf7
+
+.mobSubmenu
+  line-height: 45px
+
+.ulMenuLarge
+  display: none
+  list-style: none
+  margin: 0
+  padding: 0
+
+  &.open
+    display: block
+
+
+.mobSubmenuLarge
+  transition: all 0.1s ease-in-out
+  line-height: initial
+  z-index: 99
+  margin: 0 0 0
+  opacity: 1
+  visibility: visible
+  display: block
+  position: static
+  width: 100%
+  box-shadow: none
+  padding: 0
+  border-radius: 0
+
+  &.mobSubmenu:hover
+    opacity: 1
+    visibility: visible
+
+  .menuLeftSec
+    width: 100%
+    gap: 10px
+    padding: 15px
+    display: flex
+    flex-wrap: wrap
+    line-height: 20px
+
+    .mobLink
+      @include mobLinkGeneral
+      margin: 0
+      padding: 10px 0
+  
+  .mobLeftMenu
+    border-right: 0 !important
+    display: block
+
+  .mobLeft
+    padding: 10px 15px
+    width: 100%
+    border-bottom: 1px solid #eee
+    margin-bottom: 0
+    line-height: 20px
+
+    .mobLink
+      @include mobLinkGeneral
+      margin-bottom: 0
+      padding: 10px 0
+
+    .mobLinkSecond
+      @include mobLinkGeneral
+      padding: 10px 0 15px 0
+      margin: 0
+
+    .generator
+      margin: 2px 0 2px -8px
+      font-family: "Product Sans", sans-serif
+      display: inline-block
+      padding: 4px 8px
+      font-size: 15px
+      color: #656565
+
+  .collections
+    @include mobCollectionGeneral
+    padding: 20px 25px
+    border-left: 0
+    width: auto
+
+  .twoCollections
+    @include mobCollectionGeneral
+    padding: 20px 0 0 10px
+    position: relative
+    width: 100%
+    border: 0
+    margin: 3px 0 3px -8px
+
+    &::before
+      content: ""
+      position: absolute
+      top: 0
+      left: -20px
+      right: -20px
+      border-top: 1px solid #eee
+
+  .thirdCollections
+    @include mobCollectionGeneral
+    padding: 15px
+    white-space: normal
+    border-left: 0
+    width: auto
+
+    a
+      display: block
+      margin: 6px 0 6px -8px
+      min-width: 132px
+
+  .lastCollections
+    @include mobCollectionGeneral
+    padding: 20px
+    border-left: 0
+    width: auto
+
+  .mobGetStarted
+    width: calc(100% - 0px)
+    border-radius: 12px
+    padding: 4px 20px
+    background-position: center
+    margin: 10px 0
+    min-width: inherit
+    background-size: 110%
+
+    h4
+      color: #383c46
+      font-size: 16px
+      display: flex
+      align-items: center
+      gap: 12px
+      font-weight: 700
+      padding-top: 15px
+      margin: 0
+
+    .arrowBlack
+      right: 0
+      position: relative
+      transition: all ease 0.3s
+
+    p
+      color: #656565
+      font-size: 14px
+      padding-top: 5px
+      line-height: 22px
+      margin-top: 0
+      margin-bottom: 1rem
+
+  
+.linkText
+  font-family: "Product Sans", sans-serif
+   
+
+
+
+
+ 
+
