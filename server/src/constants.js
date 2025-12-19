@@ -22,6 +22,8 @@ module.exports = {
   OFFER_STATUS_REJECTED: 'rejected',
   OFFER_STATUS_WON: 'won',
   FILES_PATH: path.resolve(__dirname, 'public/'),
+  LOGS_PATH: path.resolve(__dirname, 'logs/'),
+  LOG_FILE: path.resolve(__dirname, 'logs/err.json'),
   SOCKET_CONNECTION: 'connection',
   SOCKET_SUBSCRIBE: 'subscribe',
   SOCKET_UNSUBSCRIBE: 'unsubscribe',
