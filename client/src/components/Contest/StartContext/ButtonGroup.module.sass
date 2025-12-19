@@ -1,0 +1,105 @@
+.buttonGroup
+  background: radial-gradient(circle at center, #f2f9ff, #e6f3ff, #e6edfa, #f2f4f8) !important
+  height: 400px
+  display: flex
+  justify-content: center
+  align-items: center
+
+  .container
+    max-width: 700px
+    width: 100%
+    margin: 40px auto
+    font-family: Product Sans, sans-serif
+    background: #fff
+    box-shadow: 0 8px 40px rgb(0 0 0 / 0.04)
+    border-radius: 16px
+    padding: 20px 20px 40px 20px
+
+    .headerBlock
+      margin-bottom: 20px
+      font-size: 14px
+      font-weight: 700
+      color: #111
+
+    .generalBlock
+      display: flex
+      gap: 16px
+      @media (max-width: 480px)
+        width: 100%
+        flex-wrap: wrap
+
+      button
+        flex: 1
+        position: relative
+        cursor: pointer
+        padding: 16px
+        background: #fff
+        border-radius: 8px
+        border: 1px solid #00000014
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        justify-content: flex-start
+        text-align: left
+        transition: all 0.2s ease
+        @media (max-width: 768px)
+          flex: 0 0 auto
+          width: 33.3333%
+        @media (max-width: 480px)
+          flex: 0 0 auto
+          width: 100%
+
+        .textOption
+          font-size: 13px
+          margin: 0 0 6px 0
+          color: #19184a80
+
+        .answering
+          display: block
+          color: #727272
+          font-size: 16px
+          font-weight: 700
+          margin: 0 0 8px 0
+        
+        .activeAnswering
+          color: #111
+        
+        &.select
+          border: 2px solid #637CF7
+
+          .mark
+            display: block
+            background-size: contain
+            border-radius: 50%
+            width: 30px
+            height: 30px
+            position: absolute
+            top: 2px
+            right: 2px
+            z-index: 99
+          
+    .textDown
+      padding: 8px 0 0 0
+      font-size: 13px
+      font-weight: 400
+      color: #848484
+
+.recommend
+  background: #deeafe
+  color: #637CF7
+  font-size: 10px
+  font-weight: 700
+  display: inline-block
+  padding: 5px 8px
+  border-radius: 8px
+  position: absolute
+  top: -10px
+  left: 50%
+  transform: translateX(-50%)
+  z-index: 10
+
+
+
+
+
+

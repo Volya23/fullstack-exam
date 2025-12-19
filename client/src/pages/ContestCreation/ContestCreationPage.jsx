@@ -8,6 +8,7 @@ import BackButton from '../../components/BackButton/BackButton';
 import ProgressBar from '../../components/ProgressBar/ProgressBar';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
+import ButtonGroup from '../../components/Contest/StartContext/ButtonGroup';
 
 const ContestCreationPage = (props) => {
   const formRef = useRef();
@@ -63,6 +64,7 @@ const ContestCreationPage = (props) => {
           </div>
         </div>
       </div>
+      <ButtonGroup />
       <Footer />
     </div>
   );
