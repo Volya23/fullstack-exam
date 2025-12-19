@@ -17,7 +17,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import ContestCreationPage from './pages/ContestCreation/ContestCreationPage';
 import CONSTANTS from './constants';
 import ChatContainer from './components/Chat/ChatComponents/ChatContainer/ChatContainer';
-import HowItWorks from './pages/HowItWorks/HowItWorks';
+import Events from './pages/Events/Events';
 
 class App extends Component {
   render () {
@@ -86,7 +86,16 @@ class App extends Component {
             path='/contest/:id'
             component={PrivateHoc(ContestPage)}
           />
-          <Route exact path='/account' component={PrivateHoc(UserProfile)} />
+          <Route
+            exact
+            path='/account'
+            component={PrivateHoc(UserProfile)}
+          />
+          <Route
+            exact
+            path='/events'
+            component={Events}
+          />
           <Route component={NotFound} />
         </Switch>
         <ChatContainer />
